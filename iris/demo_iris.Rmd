@@ -1,0 +1,37 @@
+---
+title: "Iris Analysis"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+Analyse de données des Iris avec R. 
+
+```{r}
+library(datasets)
+library(ggplot2)
+```
+
+# Quelques données statistiques:
+
+```{r}
+summary(iris[,1:4])
+```
+
+```{r}
+boxplot(iris[,1:4])
+```
+
+# Analyse de corrélation 
+
+Corrélation entre les données en fonction du type d'iris
+
+```{r}
+ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species)) + geom_point()
+```
+
+
+```{r}
+pairs(iris[,1:4], col=iris[,5])
+```
